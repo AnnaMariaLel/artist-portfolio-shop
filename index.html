@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist Portfolio, Shop & Auction</title>
+    <link rel="stylesheet" href="styles.css"> <!-- connecting the css file -->
+</head>
+<body>
+
+    <!-- Site Header -->
+    <header class="site-header">
+        <div class="logo">ARTIST NAME</div>
+
+        <nav class="main-nav">
+            <ul>
+                <li><a href="Artist-info">Info</a></li>
+                <li><a href="works">Works & Shop</a></li>
+                <li><a href="#auction">Monthly Auction</a></li>
+            </ul>
+        </nav>
+
+        <!-- shopping cart button -->
+        <button class="cart-btn" id="cart-button">
+            🛒 Cart (<span id="cart-count">0</span>)
+        </button>:
+    </header>
+
+    <main>
+        <!-- Artist Information Section (First Section, buttons and scroll indicator)-->
+        <section id="artist-info" class="info-section">
+                <div class="info-content">
+                    <h1>About the Artist</h1>
+                    <p class="artist-bio">
+                        Artist bio goes here. 
+                    </p>
+
+                    <!--Buttons for faster navigation-->
+                    <div class="artist-buttons">
+                        <a href="works" class="btn primary-btn">View Gallery & Shop</a>
+                        <a href="#auction" class="btn secondary-btn">Monthly Auction</a>
+                    </div>
+                </div>
+
+                <a href="works" class="scroll-indicator">
+                    <span class="scroll-text">Scroll Down to View Works</span>
+                    <span class="scroll-arrow">↓</span>
+                </a>
+        </section>
+
+        <!-- Works & Shop Section -->
+         <section id="works" class="works-section">
+            <div class="section-header">
+                <h2>Gallery</h2>
+                <!-- Filter buttons -->
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="gallery">Gallery</button>
+                    <button class="filter-btn" data-filter="shop">Shop</button>
+                </div>
+            </div>
+
+            <!-- Pinterest-style grid for artwork -->
+            <div class="pinterest-grid" id="artwork-grid">
+                <article class="art-card" data-category="gallery">
+                    <img src="https://picsum.photos/400/550?random=1" alt="Artwork 1">
+                    <div class="art-info">
+                        <h3>Idk, I'm just a programmer bruh</h3>
+                        <span class="badge">Gallery</span>
+                    </div>
+                </article>
+
+                <article class="art-card" data-category="shop">
+                    <img src="https://picsum.photos/400/550?random=2" alt="Artwork 2">
+                    <div class="art-info">
+                        <h3>THAT'S NOT MY JOB</h3>
+                        <p class="price">Price: $100000000</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </article>
+
+                <article class="art-card" data-category="shop">
+                    <img src="https://picsum.photos/400/550?random=3" alt="Artwork 3">
+                    <div class="art-info">
+                        <h3>I failed essay back in high school, just saying</h3>
+                        <p class="price">Price: $200000000</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+    
+        <!-- Monthly Auction Section -->
+        <section id="auction" class="auction-section">
+            <div class="auction-container">
+                <div class="auction-image">
+                    <img src="https://picsum.photos/400/550?random=4" alt="Auction Artwork">
+                </div>
+                <div class="auction-details">
+                    <span class="auction-badge">MONTHLY AUCTION</span>
+                    <h2>BLAH BLAH BLAH (100x80cm or whatever)</h2>
+                    <p> More blah blah, why are artists so talkative?</p>
+
+                    <!-- Countdown Timer -->
+                     <div class="countdown-box">
+                        <p class="countdown-label">Time Left:</p>
+                        <div id="countdown-timer"> 04 days : 12 hours : 30 minutes : 45 seconds</div>
+                    </div>
+
+                    <div class="bid-stats">
+                        <div>
+                            <span>Current Bid:</span>
+                            <strong id="current-bid">$500</strong>
+                        </div>
+                        <small id="bid-count">(7 bids up to now)</small>
+                    </div>
+
+                    <!-- Bid Button -->
+                     <form id="bid-form" class="bid-form">
+                        <input type="number" id="bid-input" placeholder="Ελάχιστη προσφορά: 330€" min="330" required>
+                        <button type="submit" class="btn bid-btn">Place Bid</button>
+                    </form>
+                    <p id="bid-message" class="bid-message"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--Connection to the JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
